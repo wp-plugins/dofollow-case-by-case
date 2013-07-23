@@ -39,7 +39,7 @@ And finally when adding a link to a page or post, you can mark it as NOFOLLOW th
 
 We were looking for a plugin like [Nofollow Case by Case](http://wordpress.org/plugins/nofollow-case-by-case/ "Nofollow Case by Case") but that worked the other way round. Instead of removing the re="nofollow" from all comments links and have the possibilty to add the rel="nofollow" case by case, we wanted to leave the rel="nofollow" and all comments and have the possibility to remove them only from some comments.
 
-Other functionality we wanted was the possibility to add a checkbox in the insert link popup box for including rel="nofollow" in links as you create them as seen in[Ultimate Nofollow](http://wordpress.org/plugins/nofollow/ "Ultimate Nofollow").
+Other functionality we wanted was the possibility to add a checkbox in the insert link popup box for including rel="nofollow" in links as you create them as seen in [Ultimate Nofollow](http://wordpress.org/plugins/nofollow/ "Ultimate Nofollow").
 
 Another interesting plugin is [Nofollow Free](http://wordpress.org/plugins/nofollow-free/ "Nofollow Free"), but unfortunately it hasn't been updated in over 2 years.
 
@@ -51,7 +51,7 @@ This first release is avaliable in English and Spanish. In the i18n we have incl
 If you would like the plugin in your language and you're good at translating, please drop us a line at [Contact us](http://apasionados.es/contacto/index.php?desde=wordpress-org-dofollow-home).
 
 = Further Reading =
-You can access the description of the plugin in Spanish at: [DoFollow Case by Case en español](http://apasionados.es/blog/dofollow-case-by-case-1676/).
+You can access the description of the plugin in Spanish at: [DoFollow Case by Case en castellano](http://apasionados.es/blog/dofollow-case-by-case-1676/).
 
 
 == Installation ==
