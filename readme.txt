@@ -4,7 +4,7 @@ Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
 Requires at least: 3.0.1
 Tested up to: 3.6.0
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,14 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 1.2. =
+Updated to 1.2 because we didn't change version in plugin main file. Sorry for the inconvenience.
+Updated and shoretened description in the plugin that show on the plugin repository in the heading.
+
+= 1.1 =
+Update of readme.txt file, changing spanish characters in link to post in Spanish.
+Added tested compatibility up to WordPress 3.6.
+
 = 1.0 =
 * First stable release.
 
@@ -119,8 +127,9 @@ Of course we do. ;-)
 
 == Upgrade Notice ==
 
-= 1.0 =
-This is the first stable release. Upgrade immediately.
+= 1.2 =
+Minor changes to readme.txt file and plugin description. Added tested compatibility up to WordPress 3.6.
+
 
 == Contact ==
 
