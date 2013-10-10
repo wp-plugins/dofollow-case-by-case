@@ -1,10 +1,10 @@
 === DoFollow Case by Case ===
-Contributors: apasionados, nunsys, netconsulting
+Contributors: apasionados, nunsys, netconsulting, desarrollo_john
 Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
 Requires at least: 3.0.1
 Tested up to: 3.6.1
-Stable tag: 1.3
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,11 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 2.0 =
+* Security update. Added security to database calls.
+* Changed database calls of functions: pagination and pagination_href.
+* Added security to functions: listWhiteDofollow, cont_config_sub_NDF_email, con_config_sub_NDF_url, nox_inner_custom_box, update_comment, remove_dofollow_author, remove_dofollow_comment.
+
 = 1.3 =
 * Maintenance update to syncronice Subversion repository so that WordPress shows updated readme.txt file. Sorry for the inconvenience.
 * Added the possibility to access the plugins settings from the WordPress plugin screen.
@@ -132,8 +137,8 @@ Of course we do. ;-)
 
 == Upgrade Notice ==
 
-= 1.3 =
-Added the possibility to access the plugins settings from the WordPress plugin screen. Minor changes to readme.txt file.
+= 2.0 =
+Security update. Added security to database calls.
 
 
 == Contact ==

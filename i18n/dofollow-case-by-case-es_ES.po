@@ -1,33 +1,87 @@
 # Translation of Plugin Dofollow-case-by-case spanish
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-07-17 23:52+0100\n"
+"Project-Id-Version: DoFollow Case by Case WordPress Plugin\n"
+"POT-Creation-Date: 2013-10-10 09:03+0100\n"
+"PO-Revision-Date: 2013-10-10 09:05+0100\n"
+"Last-Translator: Ramon <marketing@apasionados.es>\n"
+"Language-Team: Apasionados del Marketing <info@apasionados.es>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.5.5\n"
-"Project-Id-Version: Network Admin\n"
-"POT-Creation-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _e;__\n"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:38
+msgid "Settings"
+msgstr "Ajustes"
 
 # ###############################
 # 	Translation Main Panel     #
 # ###############################
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:47
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:55
 msgid "Email White List"
 msgstr "Lista Blanca Email"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:54
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:63
 msgid "URL White List"
 msgstr "Lista Blanca Url"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:263
+# ########################
+#  Translation Messages  #
+# ########################
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:177
+msgid ""
+"This email is already contained in the White List. Please go to  &quot;Email "
+"White List&quot; to edit it."
+msgstr ""
+"El correo electr&oacute;nico ya se encuentra insertado en la lista Blanca."
+"(puede editarlo en la tabla - lista blanca)"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:181
+msgid "Email added correctly to the White List"
+msgstr "Correo electronico insertado correctamente"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:193
+msgid ""
+"This URL is already contained in the White List. Please go to URL White List "
+"to edit it."
+msgstr ""
+"La URL ya se encuentra insertado en la lista Blanca.(puede editarlo en la "
+"tabla - lista blanca)"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:197
+msgid "URL added correctly to the URL White List"
+msgstr "URL insertado correctamente"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:210
+msgid "Entry removed correctly"
+msgstr "Registro Eliminado Correctamente!!"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:226
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:235
+msgid "Entry updated correctly"
+msgstr "Registro Actualizado Correctamente!!"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:273
 msgid "DoFollow Configuration"
 msgstr "Configuraci&oacute;n Dofollow"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:266
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:274
 msgid ""
 "This plugin allows you to set links in comments to be dofollow instead of "
 "nofollow. When editing a comment, now you have the option to remove the "
@@ -37,7 +91,8 @@ msgstr ""
 "lugar de nofollow. Al editar un comentario, ahora usted tiene la opción de "
 "quitar los atributos rel = &quot;nofollow&quot; de los enlaces que contienen."
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:267
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:275
 msgid ""
 "To make it easier, you can also setup commenters emails whose links in "
 "comments should always be dofollow and you can even set their Author URL "
@@ -47,7 +102,8 @@ msgstr ""
 "los comentaristas cuyos enlaces en los comentarios siempre deben ser "
 "dofollow y ahora usted puede  fijar el Autor URL a dofollow."
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:267
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:276
 msgid ""
 "On the other side you can also define URLs that when contained in a comment "
 "are always dofollow, so that you can setup links to your own sites to be "
@@ -57,11 +113,16 @@ msgstr ""
 "contenidas en un comentario seran dofollow, para que pueda configurar los "
 "enlaces a sus propios sitios para que siempre sea dofollow."
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:265
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:279
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:282
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:353
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:470
 msgid "Email"
 msgstr "Correo Electr&oacute;nico"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:267
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:281
 msgid ""
 "Removes the &quot;nofollow&quot; attribute from the comments made by a "
 "certain commenter, identified by his email address. You can also setup that "
@@ -75,19 +136,24 @@ msgstr ""
 "nico se agrega a la lista blanca de correo electr&oacute;nico. Por favor, "
 "editarlo all&iacute;."
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:270
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:283
 msgid "DoFollow Author URL from commenter"
 msgstr "DoFollow Autor URL del comentarista"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:271
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:284
 msgid "When checked: Enable"
 msgstr "Activar / Desactivar"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:274
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:287
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:299
 msgid "Save"
 msgstr "guardar"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:281
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:294
 msgid ""
 "Removes the &quot;nofollow&quot; attribute from the URLs you setup. Adding "
 "an email address here adds it to the URL White List. Please edit it there."
@@ -96,7 +162,8 @@ msgstr ""
 "ade una direcci&oacute;n de correo electr&oacute;nico a la lista blanca URL. "
 "Por favor, editarlo all&iacute;."
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:282
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:295
 msgid "You can add links to your own site and also to external sites."
 msgstr ""
 "Puedes a&ntilde;adir enlaces a su propio sitio y tambi&eacute;n a sitios "
@@ -105,11 +172,13 @@ msgstr ""
 # ##############################################
 #  Translation Panel whiteList Email and URL  #
 # ##############################################
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:322
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:336
 msgid "Setup EMAIL White List"
 msgstr "Configuraci&oacute;n Lista Blanca Email"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:328
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:337
 msgid ""
 "The Email White List contains a list of emails of commenters, whose links in "
 "comments are allways dofollow. And you can also choose to make the Author "
@@ -120,22 +189,8 @@ msgstr ""
 "siempre dofollow. Y también se puede optar por hacer el Autor URL dofollow. "
 "Por defecto no se sigue el Autor URL."
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:379
-msgid ""
-"The URL White List contains a list of URLs that when linked to in a comment, "
-"are always dofollow, nevertheless who links to \tthem."
-msgstr ""
-"La Lista Blanca URL contiene una lista de URLs que cuando se encuentra en un "
-"comentario, siempre son dofollow."
-
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:380
-msgid ""
-"Here you can setup for example links from your sites or from other sites."
-msgstr ""
-"Aquí puede configurar los enlaces por ejemplo enlaces de su sitio u otros "
-"sitios."
-
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:331
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:338
 msgid ""
 "Here you can add for example the email addresses of your staff and "
 "collaborators."
@@ -143,70 +198,95 @@ msgstr ""
 "Aquí puede añadir, por ejemplo, las direcciones de correo electrónico de sus "
 "empleados y colaboradores."
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:327
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:342
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:391
 msgid "Bulk actions"
 msgstr "Acciones en lote"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:328
-msgid "Enable DoFollow Author URLs"
-msgstr "Activar Url Author Dofollow"
-
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:329
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:343
 msgid "Disable DoFollow Author URLs"
 msgstr "Desactivar Url Author Dofollow"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:330
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:344
+msgid "Enable DoFollow Author URLs"
+msgstr "Activar Url Author Dofollow"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:345
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:392
 msgid "Remove"
 msgstr "Eliminar"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:332
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:347
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:394
 msgid "Apply"
 msgstr "Aplicar"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:369
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:386
 msgid "Setup URL White List"
 msgstr "Configuraci&oacute;n Lista Blanca Url"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:387
+msgid ""
+"The URL White List contains a list of URLs that when linked to in a comment, "
+"are always dofollow, nevertheless who links to \tthem."
+msgstr ""
+"La Lista Blanca URL contiene una lista de URLs que cuando se encuentra en un "
+"comentario, siempre son dofollow."
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:388
+msgid ""
+"Here you can setup for example links from your sites or from other sites."
+msgstr ""
+"Aquí puede configurar los enlaces por ejemplo enlaces de su sitio u otros "
+"sitios."
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:430
+msgid "Insert/edit link"
+msgstr "Insertar/Editar enlace"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:431
+msgid "Update"
+msgstr "Actualizar"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:432
+msgid "Add Link"
+msgstr "Añadir enlace"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:433
+msgid "(no title)"
+msgstr "(sin título)"
+
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:434
+msgid "No matches found."
+msgstr "No se han encontrado coincidencias."
 
 # ##################################
 #  Translation Panel Edit Comment  #
 # ##################################
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:413
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:446
 msgid "DoFollow Case by Case Options"
 msgstr "Opciones Dofollow-case-by-case"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:424
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:457
 msgid "Change all comment links to DoFollow"
 msgstr "Cambia todos los enlaces a DOFOLLOW"
 
-#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:435
+#: O:\WEBs\14 WordPress PLUGINS programados\20130719 DoFollow Case by
+#: Case\dofollow-case-by-case/dofollow-case-by-case.php:468
 msgid "User contained in the DoFollow White List"
 msgstr "Usuario registrado en la Lista blanca"
-
-# ########################
-#  Translation Messages  #
-# ########################
-msgid ""
-"This email is already contained in the White List. Please go to  &quot;Email "
-"White List&quot; to edit it."
-msgstr ""
-"El correo electr&oacute;nico ya se encuentra insertado en la lista Blanca."
-"(puede editarlo en la tabla - lista blanca)"
-
-msgid "Email added correctly to the White List"
-msgstr "Correo electronico insertado correctamente"
-
-msgid ""
-"This URL is already contained in the White List. Please go to &quot;URL "
-"White List&quot; to edit it."
-msgstr ""
-"La URL ya se encuentra insertado en la lista Blanca.(puede editarlo en la "
-"tabla - lista blanca)"
-
-msgid "URL added correctly to the URL White List"
-msgstr "URL insertado correctamente"
-
-msgid "Entry removed correctly"
-msgstr "Registro Eliminado Correctamente!!"
-
-msgid "Entry updated correctly"
-msgstr "Registro Actualizado Correctamente!!"
