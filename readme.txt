@@ -1,10 +1,10 @@
 === DoFollow Case by Case ===
-Contributors: apasionados, nunsys, netconsulting
+Contributors: apasionados, nunsys, netconsulting, desarrollo_john
 Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
 Requires at least: 3.0.1
-Tested up to: 3.6.0
-Stable tag: 1.2
+Tested up to: 3.6.1
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,13 +111,23 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 2.0 =
+* Security update. Added security to database calls.
+* Changed database calls of functions: pagination and pagination_href.
+* Added security to functions: listWhiteDofollow, cont_config_sub_NDF_email, con_config_sub_NDF_url, nox_inner_custom_box, update_comment, remove_dofollow_author, remove_dofollow_comment.
+
+= 1.3 =
+* Maintenance update to syncronice Subversion repository so that WordPress shows updated readme.txt file. Sorry for the inconvenience.
+* Added the possibility to access the plugins settings from the WordPress plugin screen.
+* Added tested compatibility up to WordPress 3.6.1.
+
 = 1.2. =
-Updated to 1.2 because we didn't change version in plugin main file. Sorry for the inconvenience.
-Updated and shoretened description in the plugin that show on the plugin repository in the heading.
+* Updated to 1.2 because we didn't change version in plugin main file. Sorry for the inconvenience.
+* Updated and shortened description in the plugin that show on the plugin repository in the heading.
 
 = 1.1 =
-Update of readme.txt file, changing spanish characters in link to post in Spanish.
-Added tested compatibility up to WordPress 3.6.
+* Update of readme.txt file, changing spanish characters in link to post in Spanish.
+* Added tested compatibility up to WordPress 3.6.
 
 = 1.0 =
 * First stable release.
@@ -127,8 +137,8 @@ Added tested compatibility up to WordPress 3.6.
 
 == Upgrade Notice ==
 
-= 1.2 =
-Minor changes to readme.txt file and plugin description. Added tested compatibility up to WordPress 3.6.
+= 2.0 =
+Security update. Added security to database calls.
 
 
 == Contact ==

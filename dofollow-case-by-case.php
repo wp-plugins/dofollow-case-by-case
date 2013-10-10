@@ -3,8 +3,8 @@
 Plugin Name: DoFollow Case by Case
 Plugin URI: http://apasionados.es/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=wpdofollowplugin 
 Description: DoFollow Case by Case allows you to selectively apply dofollow to comments and make links in a pages or posts "nofollow".
-Version: 1.2
-Author: Apasionados, Apasionados del Marketing, Nunsys, NetConsulting, John Christopher
+Version: 2.0
+Author: Apasionados, Apasionados del Marketing, Nunsys, NetConsulting, John
 Author URI: http://apasionados.es 
 */
 
@@ -31,6 +31,15 @@ add_action('plugins_loaded', 'language_NDF');
 function language_NDF() {
 	load_plugin_textdomain('dofollow-case-by-case', false, dirname(plugin_basename( __FILE__ )).'/i18n/'); 
 }
+
+// -- Acess plugins settings from PLUGINS / INSTALLED PLUGINS
+function ndf_plugin_action_links( $links, $file ) {
+	if ( $file == plugin_basename( dirname(__FILE__).'/dofollow-case-by-case.php' ) ) {
+		$links[] = '<a href="' . admin_url( 'admin.php?page=cont_config_NDF' ) . '">'.__( 'Settings' ).'</a>';
+	}
+	return $links;
+}
+add_filter( 'plugin_action_links', 'ndf_plugin_action_links', 10, 2);
 
 // --- Config MENU
 add_action('admin_menu','menu_config_NDF');
@@ -73,8 +82,8 @@ function show_admin_messages($mensaje, $bool_error){
 
 // -- Pagination
 function pagination($page, $opc){
-	global $wpdb;            
-	$num_rows = count($wpdb->get_results("SELECT * FROM ".$wpdb->prefix."nodofollow where opc='".$opc."'"));	
+	global $wpdb;           
+	$num_rows = $wpdb->query($wpdb->prepare("SELECT * FROM ".$wpdb->prefix."nodofollow WHERE opc = %s",$opc));	
 	//reg per page
 	$rows_per_page = 10;	
 	//total pages
@@ -93,7 +102,7 @@ function pagination($page, $opc){
 // --- pagination_href
 function pagination_href($paged, $opc){
 	global $wpdb;			
-	$num_rows = count($wpdb->get_results("SELECT * FROM ".$wpdb->prefix."nodofollow where opc='".$opc."'"));
+	$num_rows = $wpdb->query($wpdb->prepare('SELECT * FROM '.$wpdb->prefix.'nodofollow WHERE opc = %s',$opc));
 	//total pages
     $lastpage= ceil($num_rows / 10);
 	
@@ -116,9 +125,9 @@ function listWhiteDofollow($opc){
 	$url = plugins_url('/images/', __FILE__);			
 	//get Var and call of pagination
 	if(isset($_REQUEST['paged'])){ $page= $_REQUEST['paged']; $limit = pagination($page, $opc);}
-	else{ $page=1; $limit = pagination($page, $opc);}		
+	else{ $page=1; $limit = pagination($page, $opc);}			
 	
-	$aNDF = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."nodofollow where opc='".$opc."' ".$limit);	
+	$aNDF = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->prefix."nodofollow WHERE opc ='%s' $limit", $opc));	
 	
 	switch($opc){
 		case "email":										
@@ -162,11 +171,11 @@ function listWhiteDofollow($opc){
 // --- Insert Users(email)
 function getEmail($act){
 	global $wpdb;		
-	$aUserNDF = $wpdb->get_row("SELECT user_email FROM ".$wpdb->prefix."nodofollow where user_email ='".$_REQUEST['ndf_email']."'", ARRAY_A);	
+	$aUserNDF = $wpdb->query($wpdb->prepare('SELECT user_email FROM '.$wpdb->prefix.'nodofollow WHERE user_email = %s',$_REQUEST['ndf_email']));		
 	//check to see if this is inserted in the database
 	if($aUserNDF){					
 		show_admin_messages(__( 'This email is already contained in the White List. Please go to  &quot;Email White List&quot; to edit it.', 'dofollow-case-by-case'), true);
-	}else{					
+	}else{
 		$data = array('active_dofollow' => 1, 'user_email' => $_REQUEST['ndf_email'], 'opc' => 'email','active_dofollow_url_author' => $act);
 		$wpdb->insert($wpdb->prefix."nodofollow", $data);
 		show_admin_messages(__( 'Email added correctly to the White List', 'dofollow-case-by-case'), false);
@@ -181,7 +190,7 @@ function getUrl(){
 	$aUrlNDF = $wpdb->get_row("SELECT url FROM ".$wpdb->prefix."nodofollow where url ='".$_REQUEST['ndf_url']."'", ARRAY_A);		
 	//check to see if this is inserted in the database
 	if($aUrlNDF){					
-		show_admin_messages(__('This URL is already contained in the White List. Please go to “URL White List” to edit it.', 'dofollow-case-by-case'), true);
+		show_admin_messages(__('This URL is already contained in the White List. Please go to URL White List to edit it.', 'dofollow-case-by-case'), true);
 	}else{					
 		$data = array('active_dofollow' => 1, 'url' => $_REQUEST['ndf_url'], 'opc' => 'url');
 		$wpdb->insert($wpdb->prefix."nodofollow", $data);
@@ -204,12 +213,12 @@ function get_delete_list($aNDFs){
 }
 
 // --- Update email URL Author dofollow of the whitelist
-function get_update_list($aNDFs, $opc){	
+function get_update_list($aNDFs, $active){	
 	global $wpdb;
 	$message = '';
 	foreach($aNDFs as $aNDF){
-		//if opc 1 activate
-		if($opc == 1){
+		//if active 1 activate
+		if($active == 1){	
 			if(isset($_REQUEST[$aNDF->id.'_action'])){				
 				$data = array('active_dofollow_url_author' => 1);
 				$where = array('id' => $aNDF->id);
@@ -217,8 +226,8 @@ function get_update_list($aNDFs, $opc){
 				$message = __('Entry updated correctly', 'dofollow-case-by-case');
 			}
 		}		
-		//if opc 2 deactivate
-		if($opc == 2){
+		//if active 2 deactivate
+		if($active == 0){		
 			if(isset($_REQUEST[$aNDF->id.'_action'])){			
 				$data = array('active_dofollow_url_author' => 0);
 				$where = array('id' => $aNDF->id);
@@ -301,16 +310,16 @@ function cont_config_sub_NDF_email(){
 	global $wpdb;
 	add_action('admin_notices', 'show_admin_messages');
 	if(isset($_REQUEST['ndf_action_submit'])){		
-		//check action selected
-		$aNDFs = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."nodofollow");	
+		//check action selected 
+		$aNDFs = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->prefix."nodofollow WHERE active_dofollow = %d", 1));	
 		switch($_REQUEST['acciones']){
+			case 0:		
+				$message =  get_update_list($aNDFs, $_REQUEST['acciones']);
+				break;			
 			case 1:
-				$message = get_update_list($aNDFs, $_REQUEST['acciones']);			
-				break;
-			case 2:
 				$message =  get_update_list($aNDFs, $_REQUEST['acciones']);
 				break;
-			case 3:
+			case 2:
 				$message = get_delete_list($aNDFs);					
 				break;
 			default:
@@ -330,10 +339,10 @@ function cont_config_sub_NDF_email(){
 				
 					<p> 
 						<select name="acciones" size="1"> 
-							<option value="0"><?php _e( 'Bulk actions', 'dofollow-case-by-case'); ?></option> 							
-							<option value="1"><?php _e( 'Enable DoFollow Author URLs', 'dofollow-case-by-case'); ?></option> 
-							<option value="2"><?php _e( 'Disable DoFollow Author URLs', 'dofollow-case-by-case'); ?></option> 
-							<option value="3"><?php _e( 'Remove', 'dofollow-case-by-case'); ?></option> 
+							<option value=""><?php _e( 'Bulk actions', 'dofollow-case-by-case'); ?></option> 							
+							<option value="0"><?php _e( 'Disable DoFollow Author URLs', 'dofollow-case-by-case'); ?></option> 
+							<option value="1"><?php _e( 'Enable DoFollow Author URLs', 'dofollow-case-by-case'); ?></option> 							
+							<option value="2"><?php _e( 'Remove', 'dofollow-case-by-case'); ?></option> 
 						</select>
 						<input type="submit" id="ndf_action_submit" name="ndf_action_submit" value="<?php _e( 'Apply', 'dofollow-case-by-case'); ?>" class="button action" style="margin-left:5px"/>
 					</p>						
@@ -358,7 +367,7 @@ function cont_config_sub_NDF_url(){
 	add_action('admin_notices', 'show_admin_messages');
 	if(isset($_REQUEST['ndf_action_submit'])){
 		//check action selected
-		$aNDFs = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."nodofollow");	
+		$aNDFs = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->prefix."nodofollow WHERE active_dofollow = %d", 1));	
 		switch($_REQUEST['acciones']){			
 			case 3:
 				$message = get_delete_list($aNDFs);					
@@ -444,7 +453,7 @@ function box_inner_custom_box(){
 	$url = plugins_url('/images/', __FILE__);	
 	//ID comment in Array 
 	$comment_array = get_comment($comment->comment_ID, ARRAY_A);		
-	$aCommentNDF = $wpdb->get_row("SELECT active_dofollow FROM ".$wpdb->prefix."nodofollow where id_comment = ".$comment_array['comment_ID'], ARRAY_A);			
+	$aCommentNDF = $wpdb->get_row($wpdb->prepare('SELECT active_dofollow FROM '.$wpdb->prefix.'nodofollow WHERE id_comment = %d', $comment_array['comment_ID']), ARRAY_A);			
 	echo '<br /><label><strong>'.__( 'Change all comment links to DoFollow', 'dofollow-case-by-case').'</strong></label> <br /><br />';	 	
 	echo '<input type="checkbox" name="nofollow_text" value="0" style="margin-left:20px"';
 	
@@ -454,7 +463,7 @@ function box_inner_custom_box(){
 	echo '/><span style="padding-left: 10px">dofollow</span><br /><br />';			
 	
 	//check email user in whitelist
-	$aAuthorNDF = $wpdb->get_row("SELECT user_email, active_dofollow_url_author FROM ".$wpdb->prefix."nodofollow where user_email ='".$comment_array['comment_author_email']."'", ARRAY_A);			
+	$aAuthorNDF = $wpdb->get_row($wpdb->prepare('SELECT user_email, active_dofollow_url_author FROM '.$wpdb->prefix.'nodofollow WHERE user_email = %s',$comment_array['comment_author_email']), ARRAY_A);			
 	
 	echo '<p><strong>'.__( 'User contained in the DoFollow White List', 'dofollow-case-by-case').'</strong></p>';
 	echo '<table width="50%" style="border: 1px solid #c3c3c3">';
@@ -480,7 +489,7 @@ function update_comment($comment_content){
 	global $wpdb, $comment;				
 	if(isset($_POST['nofollow_text'])){
 		//ID comment and check if is selected
-		$aCommentNDF = $wpdb->get_row("SELECT id_comment FROM ".$wpdb->prefix."nodofollow where id_comment = ".$_REQUEST['c'], ARRAY_A);	
+		$aCommentNDF = $wpdb->get_row($wpdb->prepare('SELECT id_comment FROM '.$wpdb->prefix.'nodofollow WHERE id_comment = %d', $_REQUEST['c']), ARRAY_A);	
 		if($aCommentNDF != NULL){
 				$active_dofollow = 1;		
 				$data = array('id_comment' => $_REQUEST['c'], 'active_dofollow' => $active_dofollow);
@@ -494,7 +503,7 @@ function update_comment($comment_content){
 	}
 	else{
 		//check if exist
-		$aCommentNDF = $wpdb->get_row("SELECT id_comment FROM ".$wpdb->prefix."nodofollow where id_comment = ".$_REQUEST['c'], ARRAY_A);	
+		$aCommentNDF = $wpdb->get_row($wpdb->prepare('SELECT id_comment FROM '.$wpdb->prefix.'nodofollow WHERE id_comment = %d', $_REQUEST['c']), ARRAY_A);	
 		if($aCommentNDF != NULL){
 			$active_dofollow = 0;		
 			$data = array('id_comment' => $_REQUEST['c'], 'active_dofollow' => $active_dofollow);
@@ -515,7 +524,7 @@ function remove_DofollowAuthor($commentAuthor){
     $url = get_comment_author_url();
     $author = get_comment_author();
 	
-	$aAuthorEmailNDF = $wpdb->get_row("SELECT id_comment, active_dofollow, active_dofollow_url_author FROM ".$wpdb->prefix."nodofollow where user_email='".$comment_array['comment_author_email']."' AND active_dofollow_url_author = 1", ARRAY_A);	
+	$aAuthorEmailNDF = $wpdb->get_row($wpdb->prepare('SELECT id_comment, active_dofollow, active_dofollow_url_author FROM '.$wpdb->prefix.'nodofollow WHERE user_email = %s AND active_dofollow_url_author = 1', $comment_array['comment_author_email']), ARRAY_A);	
 
 	if($aAuthorEmailNDF['active_dofollow'] == 1)
 	   $contentAuthor = "<a href='".$url."' rel='external' target='_blank'>".$author."</a>";
@@ -534,27 +543,29 @@ function remove_DoFollowComment($c){
 	//Array comment
 	$comment_array = get_comment($comment->comment_ID, ARRAY_A ); 			
 	//ID user desactivate of url dofollow of comments, and udate dofollow of the URL Author
-	$aAuthorEmailNDF = $wpdb->get_row("SELECT id_comment, active_dofollow FROM ".$wpdb->prefix."nodofollow where user_email='".$comment_array['comment_author_email']."' AND active_dofollow = 1", ARRAY_A);	
+	$aAuthorEmailNDF = $wpdb->get_row($wpdb->prepare('SELECT id_comment, active_dofollow FROM '.$wpdb->prefix.'nodofollow WHERE user_email = %s AND active_dofollow = 1',$comment_array['comment_author_email']), ARRAY_A);	
 	//ID comment if is activate of delete url dofollow	
-	$aCommentNDF = $wpdb->get_row("SELECT id_comment, active_dofollow FROM ".$wpdb->prefix."nodofollow where id_comment = ".$comment_array['comment_ID'], ARRAY_A);				
+	$aCommentNDF = $wpdb->get_row($wpdb->prepare('SELECT id_comment, active_dofollow FROM '.$wpdb->prefix.'nodofollow WHERE id_comment = %d', $comment_array['comment_ID']), ARRAY_A);				
 	//delete content and recovery URL
 	$url = clearComment($c);		
 	//URL of comment check in BBDD
-	$aUrlNDF = $wpdb->get_row("SELECT id_comment, active_dofollow FROM ".$wpdb->prefix."nodofollow where url ='".$url."'", ARRAY_A);	
+	$aUrlNDF = $wpdb->get_row($wpdb->prepare('SELECT id_comment, active_dofollow FROM '.$wpdb->prefix.'nodofollow WHERE url = %s ', $url), ARRAY_A);	
 
-	if($aCommentNDF['id_comment'] == $comment_array['comment_ID']){
-		if($aCommentNDF['active_dofollow'] == 1)
+	if($aAuthorEmailNDF['active_dofollow'] == 1){							
 			$c = str_replace('nofollow', 'external', $c);			
 	}else{
-		if($aAuthorEmailNDF['active_dofollow'] == 1){							
-			$c = str_replace('nofollow', 'external', $c);			
-		}else{
 			if($aUrlNDF['active_dofollow'] == 1)
 				$c = str_replace('nofollow', 'external', $c);			
-			else
-				$c;
-		}
-	}	
+			else{
+				if($aCommentNDF['id_comment'] == $comment_array['comment_ID']){
+					if($aCommentNDF['active_dofollow'] == 1)
+						$c = str_replace('nofollow', 'external', $c);			
+				}else{
+					$c;
+				}
+			}
+				
+	}
 	//update URL target _blank
 	$c = str_replace('<a', '<a target="_blank"', $c);
 	//delete cache
