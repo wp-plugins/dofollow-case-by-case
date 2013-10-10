@@ -1,7 +1,7 @@
 # Translation of Plugin Dofollow-case-by-case spanish
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-07-17 23:52+0100\n"
+"PO-Revision-Date: 2013-10-09 13:43+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -112,13 +112,19 @@ msgstr "Configuraci&oacute;n Lista Blanca Email"
 #: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:328
 msgid ""
 "The Email White List contains a list of emails of commenters, whose links in "
-"comments are allways dofollow. And you can also choose to make the Author "
-"URL dofollow. By default the Author URL is not followed."
+"comments are allways dofollow."
 msgstr ""
 "La Lista Blanca de Correo Electrónico contiene una lista de correos "
 "electrónicos de los comentaristas, cuyos enlaces en los comentarios seran "
-"siempre dofollow. Y también se puede optar por hacer el Autor URL dofollow. "
-"Por defecto no se sigue el Autor URL."
+"siempre dofollow."
+
+#: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:330
+msgid ""
+"And you can also choose to make the Author URL dofollow. By default the "
+"Author URL is not followed."
+msgstr ""
+"Y también se puede optar por hacer el Autor URL dofollow. Por defecto no se "
+"sigue el Autor URL."
 
 #: wp-content/plugins/dofollow-case-by-case/dofollow-case-by-case.php:379
 msgid ""
