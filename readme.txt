@@ -4,7 +4,7 @@ Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
 Requires at least: 3.0.1
 Tested up to: 3.6.1
-Stable tag: 2.0
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,16 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 2.2 =
+* Spanish translation update.
+
+= 2.1 =
+* Style updates to plugin administration layout.
+* Better organization of the administration layout.
+* New plugin administration header.
+* New button layout.
+* Better pagination within the plugin administration.
+
 = 2.0 =
 * Security update. Added security to database calls.
 * Changed database calls of functions: pagination and pagination_href.
@@ -137,9 +147,8 @@ Of course we do. ;-)
 
 == Upgrade Notice ==
 
-= 2.0 =
-Security update. Added security to database calls.
-
+= 2.2 =
+Spanish translation update.
 
 == Contact ==
 
