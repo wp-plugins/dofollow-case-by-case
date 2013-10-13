@@ -4,7 +4,7 @@ Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
 Requires at least: 3.0.1
 Tested up to: 3.6.1
-Stable tag: 2.2
+Stable tag: 2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,13 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 2.4 =
+* Upload of missing images from administration layout.
+
+= 2.3 =
+* Upload of missing images from administration layout.
+* Style updates to plugin administration layout.
+
 = 2.2 =
 * Spanish translation update.
 
@@ -147,8 +154,8 @@ Of course we do. ;-)
 
 == Upgrade Notice ==
 
-= 2.2 =
-Spanish translation update.
+= 2.4 =
+Upload of missing images from administration layout.
 
 == Contact ==
 
