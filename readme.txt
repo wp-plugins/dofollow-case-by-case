@@ -3,8 +3,8 @@ Contributors: apasionados, nunsys, netconsulting, desarrollo_john
 Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
 Requires at least: 3.0.1
-Tested up to: 3.6.1
-Stable tag: 2.4
+Tested up to: 3.7.1
+Stable tag: 2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,9 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 2.5 =
+* Change of function name: "pagination" to "pagination_limit" to prevent conflicts with some themes. These themes use the "pagination" function for the blog pagination and when our plugin was installed, it didn't show pagination at all.
+
 = 2.4 =
 * Upload of missing images from administration layout.
 
@@ -154,8 +157,8 @@ Of course we do. ;-)
 
 == Upgrade Notice ==
 
-= 2.4 =
-Upload of missing images from administration layout.
+= 2.5 =
+Change of function name: "pagination" to "pagination_limit" to prevent conflicts with some themes.
 
 == Contact ==
 

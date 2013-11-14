@@ -3,7 +3,7 @@
 Plugin Name: DoFollow Case by Case
 Plugin URI: http://apasionados.es/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=wpdofollowplugin 
 Description: DoFollow Case by Case allows you to selectively apply dofollow to comments and make links in a pages or posts "nofollow".
-Version: 2.4
+Version: 2.5
 Author: Apasionados, Apasionados del Marketing, Nunsys, NetConsulting, John
 Author URI: http://apasionados.es 
 */
@@ -89,8 +89,8 @@ function show_admin_messages($mensaje, $bool_error){
     show_message_($mensaje, $bool_error);
 }
 
-// -- Pagination
-function pagination($page, $opc){
+// -- pagination_limit
+function pagination_limit($page, $opc){
 	global $wpdb;           
 	$num_rows = $wpdb->query($wpdb->prepare("SELECT * FROM ".$wpdb->prefix."nodofollow WHERE opc = %s",$opc));	
 	//reg per page
@@ -137,9 +137,9 @@ function pagination_href($paged, $opc){
 function listWhiteDofollow($opc){	
 	global $wpdb;
 	$url = plugins_url('/images/', __FILE__);			
-	//get Var and call of pagination
-	if(isset($_REQUEST['paged'])){ $page= $_REQUEST['paged']; $limit = pagination($page, $opc);}
-	else{ $page=1; $limit = pagination($page, $opc);}			
+	//get Var and call of pagination_limit
+	if(isset($_REQUEST['paged'])){ $page= $_REQUEST['paged']; $limit = pagination_limit($page, $opc);}
+	else{ $page=1; $limit = pagination_limit($page, $opc);}			
 	
 	$aNDF = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->prefix."nodofollow WHERE opc ='%s' $limit", $opc));	
 	
