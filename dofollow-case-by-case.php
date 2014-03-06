@@ -3,7 +3,7 @@
 Plugin Name: DoFollow Case by Case
 Plugin URI: http://apasionados.es/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=wpdofollowplugin 
 Description: DoFollow Case by Case allows you to selectively apply dofollow to comments and make links in a pages or posts "nofollow".
-Version: 2.5
+Version: 2.6
 Author: Apasionados, Apasionados del Marketing, Nunsys, NetConsulting, John
 Author URI: http://apasionados.es 
 */
@@ -555,9 +555,15 @@ function remove_DofollowAuthor($commentAuthor){
 	$aAuthorEmailNDF = $wpdb->get_row($wpdb->prepare('SELECT id_comment, active_dofollow, active_dofollow_url_author FROM '.$wpdb->prefix.'nodofollow WHERE user_email = %s AND active_dofollow_url_author = 1', $comment_array['comment_author_email']), ARRAY_A);	
 
 	if($aAuthorEmailNDF['active_dofollow'] == 1)
-	   $contentAuthor = "<a href='".$url."' rel='external' target='_blank'>".$author."</a>";
+		if ( empty( $url ) || 'http://' == $url )
+			$contentAuthor = $author;
+		else
+			$contentAuthor = "<a href='".$url."' rel='external' target='_blank'>".$author."</a>";
 	else	
-        $contentAuthor = "<a href='".$url."' rel='external nofollow' target='_blank'>".$author."</a>";    
+		if ( empty( $url ) || 'http://' == $url )
+			$contentAuthor = $author;
+		else
+	        $contentAuthor = "<a href='".$url."' rel='external nofollow' target='_blank'>".$author."</a>";    
 	
 	//delete cache
 	$wpdb->flush();
