@@ -3,8 +3,8 @@ Contributors: apasionados, nunsys, netconsulting, desarrollo_john
 Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
 Requires at least: 3.0.1
-Tested up to: 3.9.0
-Stable tag: 2.6
+Tested up to: 3.9.1
+Stable tag: 2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,9 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 2.7 =
+* Added compatibility to all Genesis Framework 2 themes, that use the comment_text function, instead of the get_comment_text function.
+
 = 2.6 =
 * Following the request of ParkerWest we have changed the behaviour of the plugin when an AUTHOR doesn't include a URL when commenting. Now if the AUTHOR of a comment doesn't include a URL when commenting, the AUTHOR name is not linked any more to the comment and in this case the AUTHOR name has no link.
 
@@ -160,8 +163,8 @@ Of course we do. ;-)
 
 == Upgrade Notice ==
 
-= 2.6 =
-Now if the AUTHOR of a comment doesn't include a URL when commenting, the AUTHOR name is not linked any more to the comment and in this case the AUTHOR name has no link.
+= 2.7 =
+Added compatibility to all Genesis Framework 2 themes, that use the comment_text function, instead of the get_comment_text function.
 
 == Contact ==
 
