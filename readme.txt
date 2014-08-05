@@ -4,7 +4,7 @@ Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 2.7
+Stable tag: 2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,9 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 2.8 =
+* Added compatibility to WordPress 3.9.1 (JavasScript error: ReferenceError: tinyMCEPopup is not defined) by updating the insert link Javascript library wplink.js and the main plugin file.
+
 = 2.7 =
 * Added compatibility to all Genesis Framework 2 themes, that use the comment_text function, instead of the get_comment_text function.
 
@@ -163,8 +166,8 @@ Of course we do. ;-)
 
 == Upgrade Notice ==
 
-= 2.7 =
-Added compatibility to all Genesis Framework 2 themes, that use the comment_text function, instead of the get_comment_text function.
+= 2.8 =
+Added compatibility to WordPress 3.9.1 (JavasScript error: ReferenceError: tinyMCEPopup is not defined) by updating the insert link Javascript library wplink.js and the main plugin file.
 
 == Contact ==
 

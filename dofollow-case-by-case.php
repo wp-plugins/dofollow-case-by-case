@@ -3,7 +3,7 @@
 Plugin Name: DoFollow Case by Case
 Plugin URI: http://apasionados.es/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=wpdofollowplugin 
 Description: DoFollow Case by Case allows you to selectively apply dofollow to comments and make links in a pages or posts "nofollow".
-Version: 2.7
+Version: 2.8
 Author: Apasionados, Apasionados del Marketing, Nunsys, NetConsulting, John
 Author URI: http://apasionados.es 
 */
@@ -453,6 +453,7 @@ foreach( $shortcodes as $shortcode ) add_shortcode( $shortcode, 'shortcode_NDF' 
 // --add rel no follow wplink()
 function nofollow_rel_NDF() {
 	wp_deregister_script( 'wplink' );
+	$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 	wp_register_script( 'wplink', plugins_url( '/js/wplink.js', __FILE__), array( 'jquery', 'wpdialogs' ), false, 1 );
 	wp_localize_script( 'wplink', 'wpLinkL10n', array(
 		'title' => __('Insert/edit link'),
@@ -462,9 +463,7 @@ function nofollow_rel_NDF() {
 		'noMatchesFound' => __('No matches found.')
 	) );
 }
-add_action( 'admin_enqueue_scripts', 'nofollow_rel_NDF');
-
-
+add_action( 'admin_enqueue_scripts', 'nofollow_rel_NDF', 999 );
 
 // --- Create box in edit commment
 add_action('add_meta_boxes', 'create_box');
