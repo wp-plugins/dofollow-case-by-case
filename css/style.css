@@ -10,7 +10,13 @@
 	text-align: justify;
 
 }
-.postbox p {
+/*.postbox p {
+	text-align:justify;
+	padding-left:15px;
+	padding-right: 15px;
+	line-height: 1.8;
+	}*/
+.postboxp p {
 	text-align:justify;
 	padding-left:15px;
 	padding-right: 15px;

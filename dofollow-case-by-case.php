@@ -3,7 +3,7 @@
 Plugin Name: DoFollow Case by Case
 Plugin URI: http://apasionados.es/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=wpdofollowplugin 
 Description: DoFollow Case by Case allows you to selectively apply dofollow to comments and make links in a pages or posts "nofollow".
-Version: 2.8
+Version: 2.9
 Author: Apasionados, Apasionados del Marketing, Nunsys, NetConsulting, John
 Author URI: http://apasionados.es 
 */
@@ -295,19 +295,27 @@ function cont_config_NDF(){
 					
 						<div class="postbox">
 							<h3 class="hndle"><span><?php _e( 'Email', 'dofollow-case-by-case'); ?></span></h3>												
-							<p><?php _e( 'Removes the &quot;nofollow&quot; attribute from the comments made by a certain commenter, identified by his email address. You can also setup that his Author URL when commenting should be dofollow. Adding an email address here adds it to the Email White List. Please edit it there.', 'dofollow-case-by-case'); ?></p>
-							<p><?php _e( 'Email', 'dofollow-case-by-case'); ?>: <input type="text" name="ndf_email" id="ndf_email" style="width:300px" value=""/></p>							
-							<p><i><?php _e( 'DoFollow Author URL from commenter', 'dofollow-case-by-case'); ?> <strong>dofollow</strong></i></p>
-							<p><?php _e( 'When checked: Enable', 'dofollow-case-by-case'); ?> : <input type="checkbox" name="url_author_ndf" id="url_author_ndf" value="0"/></p>							
-							<p><input type="submit" class="button-primary" id="ndf	_submit" name="ndf_submit" value="<?php _e( 'Save', 'dofollow-case-by-case'); ?>"/></p>
+							<div class="inside">
+                                <div class="postboxp">
+								<p><?php _e( 'Removes the &quot;nofollow&quot; attribute from the comments made by a certain commenter, identified by his email address. You can also setup that his Author URL when commenting should be dofollow. Adding an email address here adds it to the Email White List. Please edit it there.', 'dofollow-case-by-case'); ?></p>
+                                <p><?php _e( 'Email', 'dofollow-case-by-case'); ?>: <input type="text" name="ndf_email" id="ndf_email" style="width:300px" value=""/></p>							
+                                <p><i><?php _e( 'DoFollow Author URL from commenter', 'dofollow-case-by-case'); ?> <strong>dofollow</strong></i></p>
+                                <p><?php _e( 'When checked: Enable', 'dofollow-case-by-case'); ?> : <input type="checkbox" name="url_author_ndf" id="url_author_ndf" value="0"/></p>							
+                                <p><input type="submit" class="button-primary" id="ndf	_submit" name="ndf_submit" value="<?php _e( 'Save', 'dofollow-case-by-case'); ?>"/></p>
+                                </div>
+                            </div>
 						</div>						
 					
 						<div class="postbox">
 							<h3 class="hndle"><span>Url</span></h3>						
-							<p><strong><?php _e( 'Removes the &quot;nofollow&quot; attribute from the URLs you setup. Adding an email address here adds it to the URL White List. Please edit it there.', 'dofollow-case-by-case'); ?></strong></p>							
-							<p><i><?php _e( 'You can add links to your own site and also to external sites.', 'dofollow-case-by-case'); ?></i></p>
-							<p>URL:<input type="text" name="ndf_url" id="ndf_url" style="width:300px" value="http://"/></p>
-							<p><input type="submit" class="button-primary" id="ndf_submit" name="ndf_submit" value="<?php _e( 'Save', 'dofollow-case-by-case'); ?>"/></p>
+							<div class="inside">
+                                <div class="postboxp">
+                                <p><strong><?php _e( 'Removes the &quot;nofollow&quot; attribute from the URLs you setup. Adding an email address here adds it to the URL White List. Please edit it there.', 'dofollow-case-by-case'); ?></strong></p>							
+                                <p><i><?php _e( 'You can add links to your own site and also to external sites.', 'dofollow-case-by-case'); ?></i></p>
+                                <p>URL:<input type="text" name="ndf_url" id="ndf_url" style="width:300px" value="http://"/></p>
+                                <p><input type="submit" class="button-primary" id="ndf_submit" name="ndf_submit" value="<?php _e( 'Save', 'dofollow-case-by-case'); ?>"/></p>
+                                </div>
+                            </div>
 						</div>	
 					</form>
 				</div>
@@ -367,9 +375,11 @@ function cont_config_sub_NDF_email(){
 						
 						<!-- Tabla de Emails --->
 						<div class="postbox">
-							<div style="padding-bottom:20px;">
-								<h3 class="hndle"><span><?php _e( 'Email', 'dofollow-case-by-case'); ?></h3>
-									<?php echo listWhiteDofollow('email');?>
+							<div class="postboxp">
+                                <div style="padding-bottom:20px;">
+                                    <h3 class="hndle"><?php _e( 'Email', 'dofollow-case-by-case'); ?></h3>
+                                        <?php echo listWhiteDofollow('email');?>
+                                </div>
 							</div>
 						</div>								
 						
@@ -420,9 +430,11 @@ function cont_config_sub_NDF_url(){
 						</p>
 						<!--- Tabla de Url --->
 						<div class="postbox">
-							<div style="padding-bottom:20px;">
-								<h3 class="hndle"><span>Url</h3>
-								<?php echo listWhiteDofollow('url'); ?>			
+							<div class="postboxp">
+                                <div style="padding-bottom:20px;">
+                                    <h3 class="hndle">Url</h3>
+                                    <?php echo listWhiteDofollow('url'); ?>			
+                                </div>
 							</div>
 						</div>					
 					</form>

@@ -3,8 +3,8 @@ Contributors: apasionados, nunsys, netconsulting, desarrollo_john
 Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
 Requires at least: 3.0.1
-Tested up to: 3.9.1
-Stable tag: 2.8
+Tested up to: 3.9.2
+Stable tag: 2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,9 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 2.9 =
+* Minor changes of the CSS file related to problems with postbox style.
+
 = 2.8 =
 * Added compatibility to WordPress 3.9.1 (JavasScript error: ReferenceError: tinyMCEPopup is not defined) by updating the insert link Javascript library wplink.js and the main plugin file.
 
@@ -166,8 +169,8 @@ Of course we do. ;-)
 
 == Upgrade Notice ==
 
-= 2.8 =
-Added compatibility to WordPress 3.9.1 (JavasScript error: ReferenceError: tinyMCEPopup is not defined) by updating the insert link Javascript library wplink.js and the main plugin file.
+= 2.9 =
+Minor changes of the CSS file related to problems with postbox style.
 
 == Contact ==
 
