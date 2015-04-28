@@ -1,10 +1,10 @@
 === DoFollow Case by Case ===
-Contributors: apasionados, nunsys, netconsulting
+Contributors: apasionados, nunsys, netconsulting, desarrollo_john
 Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
 Requires at least: 3.0.1
-Tested up to: 3.6.0
-Stable tag: 1.2
+Tested up to: 4.2.1
+Stable tag: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,13 +111,58 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 3.0 =
+* Added compatibility to WordPress 4.2.1 by updating the insert link Javascript library wplink.js.
+
+= 2.9 =
+* Minor changes of the CSS file related to problems with postbox style.
+
+= 2.8 =
+* Added compatibility to WordPress 3.9.1 (JavasScript error: ReferenceError: tinyMCEPopup is not defined) by updating the insert link Javascript library wplink.js and the main plugin file.
+
+= 2.7 =
+* Added compatibility to all Genesis Framework 2 themes, that use the comment_text function, instead of the get_comment_text function.
+
+= 2.6 =
+* Following the request of ParkerWest we have changed the behaviour of the plugin when an AUTHOR doesn't include a URL when commenting. Now if the AUTHOR of a comment doesn't include a URL when commenting, the AUTHOR name is not linked any more to the comment and in this case the AUTHOR name has no link.
+
+= 2.5 =
+* Change of function name: "pagination" to "pagination_limit" to prevent conflicts with some themes. These themes use the "pagination" function for the blog pagination and when our plugin was installed, it didn't show pagination at all.
+
+= 2.4 =
+* Upload of missing images from administration layout.
+
+= 2.3 =
+* Upload of missing images from administration layout.
+* Style updates to plugin administration layout.
+
+= 2.2 =
+* Spanish translation update.
+
+= 2.1 =
+* Style updates to plugin administration layout.
+* Better organization of the administration layout.
+* New plugin administration header.
+* New button layout.
+* Better pagination within the plugin administration.
+
+= 2.0 =
+* Security update. Added security to database calls.
+* Changed database calls of functions: pagination and pagination_href.
+* Added security to functions: listWhiteDofollow, cont_config_sub_NDF_email, con_config_sub_NDF_url, nox_inner_custom_box, update_comment, remove_dofollow_author, remove_dofollow_comment.
+
+= 1.3 =
+* Maintenance update to syncronice Subversion repository so that WordPress shows updated readme.txt file. Sorry for the inconvenience.
+* Added the possibility to access the plugins settings from the WordPress plugin screen.
+* Added tested compatibility up to WordPress 3.6.1.
+
 = 1.2. =
-Updated to 1.2 because we didn't change version in plugin main file. Sorry for the inconvenience.
-Updated and shoretened description in the plugin that show on the plugin repository in the heading.
+* Updated to 1.2 because we didn't change version in plugin main file. Sorry for the inconvenience.
+* Updated and shortened description in the plugin that show on the plugin repository in the heading.
 
 = 1.1 =
-Update of readme.txt file, changing spanish characters in link to post in Spanish.
-Added tested compatibility up to WordPress 3.6.
+* Update of readme.txt file, changing spanish characters in link to post in Spanish.
+* Added tested compatibility up to WordPress 3.6.
 
 = 1.0 =
 * First stable release.
@@ -127,9 +172,8 @@ Added tested compatibility up to WordPress 3.6.
 
 == Upgrade Notice ==
 
-= 1.2 =
-Minor changes to readme.txt file and plugin description. Added tested compatibility up to WordPress 3.6.
-
+= 3.0 =
+Added compatibility to WordPress 4.2.x
 
 == Contact ==
 
