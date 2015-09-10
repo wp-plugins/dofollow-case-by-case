@@ -3,8 +3,8 @@ Contributors: apasionados, nunsys, netconsulting, desarrollo_john
 Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
 Requires at least: 3.0.1
-Tested up to: 4.2.1
-Stable tag: 3.0
+Tested up to: 4.3
+Stable tag: 3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,6 +111,9 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 3.1 =
+* Fixed compatibility issue with the insert "rel=nofollow" link in some WordPress 4.3 installations (update of the Javascript library js/wplink.js).
+
 = 3.0 =
 * Added compatibility to WordPress 4.2.1 by updating the insert link Javascript library wplink.js.
 
@@ -172,8 +175,8 @@ Of course we do. ;-)
 
 == Upgrade Notice ==
 
-= 3.0 =
-Added compatibility to WordPress 4.2.x
+= 3.1 =
+Fixed compatibility issue with the insert "rel=nofollow" link in some WordPress 4.3 installations.
 
 == Contact ==
 

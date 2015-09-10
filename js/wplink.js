@@ -19,7 +19,7 @@ var wpLink;
 		lastSearch: '',
 		textarea: '',
 
-				// append nofollow checkbox HTML (mod)
+	// append nofollow checkbox HTML (mod)
 		append : function() {
 			var html = '<br /><label><span> </span><input type="checkbox" id="link-nofollow-checkbox" /> Add <code>rel="nofollow"</code> to link</label>';
 			$('#wp-link .link-target').append( html );
@@ -75,7 +75,7 @@ var wpLink;
 				inputs.queryNoticeTextHint.addClass( 'screen-reader-text' ).hide();
 			} );
 
-			inputs.search.keyup( function() {
+			inputs.search.on( 'keyup input', function() {
 				var self = this;
 
 				window.clearTimeout( searchTimer );
@@ -84,26 +84,28 @@ var wpLink;
 				}, 500 );
 			});
 
-			function correctURL() {
-				var url = $.trim( inputs.url.val() );
-
-				if ( url && correctedURL !== url && ! /^(?:[a-z]+:|#|\?|\.|\/)/.test( url ) ) {
-					inputs.url.val( 'http://' + url );
-					correctedURL = url;
-				}
-			}
-
 			inputs.url.on( 'paste', function() {
-				setTimeout( correctURL, 0 );
+				setTimeout( wpLink.correctURL, 0 );
 			} );
 
-			inputs.url.on( 'blur', correctURL );
+			inputs.url.on( 'blur', wpLink.correctURL );
+		},
+
+		// If URL wasn't corrected last time and doesn't start with http:, https:, ? # or /, prepend http://
+		correctURL: function () {
+			var url = $.trim( inputs.url.val() );
+
+			if ( url && correctedURL !== url && ! /^(?:[a-z]+:|#|\?|\.|\/)/.test( url ) ) {
+				inputs.url.val( 'http://' + url );
+				correctedURL = url;
+			}
 		},
 
 		open: function( editorId ) {
-			var ed;
+			var ed,
+				$body = $( document.body );
 
-			$( document.body ).addClass( 'modal-open' );
+			$body.addClass( 'modal-open' );
 
 			wpLink.range = null;
 
@@ -118,6 +120,10 @@ var wpLink;
 			this.textarea = $( '#' + window.wpActiveEditor ).get( 0 );
 
 			if ( typeof tinymce !== 'undefined' ) {
+				// Make sure the link wrapper is the last element in the body,
+				// or the inline editor toolbar may show above the backdrop.
+				$body.append( inputs.backdrop, inputs.wrap );
+
 				ed = tinymce.get( wpActiveEditor );
 
 				if ( ed && ! ed.isHidden() ) {
@@ -229,7 +235,7 @@ var wpLink;
 				text = linkNode.innerText || linkNode.textContent;
 				inputs.url.val( editor.dom.getAttrib( linkNode, 'href' ) );
 				inputs.openInNewTab.prop( 'checked', '_blank' === editor.dom.getAttrib( linkNode, 'target' ) );
-								// Set rel="nofollow" (mod)
+				// Set rel="nofollow" (mod)
 				if ( "nofollow" == ed.dom.getAttrib(e, 'rel' ) )
 					inputs.relNofollow.prop('checked', true);
 				inputs.submit.val( wpLinkL10n.update );
@@ -270,11 +276,25 @@ var wpLink;
 		},
 
 		getAttrs: function() {
+			wpLink.correctURL();
+
 			return {
 				href: $.trim( inputs.url.val() ),
 				target: inputs.openInNewTab.prop( 'checked' ) ? '_blank' : '',
 				rel: inputs.relNofollow.prop( 'checked' ) ? 'nofollow' : '' // (mod)
 			};
+		},
+
+		buildHtml: function(attrs) {
+			var html = '<a href="' + attrs.href + '"';
+
+			if ( attrs.target ) {
+				html += ' target="' + attrs.target + '"';
+			}
+			if ( attrs.rel ) { // (mod)
+				html += ' rel="' + attrs.rel + '"';
+			}
+			return html + '>';
 		},
 
 		update: function() {
@@ -301,18 +321,7 @@ var wpLink;
 				return;
 			}
 
-			// Build HTML
-			html = '<a href="' + attrs.href + '"';
-
-			if ( attrs.target ) {
-				html += ' target="' + attrs.target + '"';
-			}
-
-			if ( attrs.rel ) { // (mod)
-				html += ' rel="' + attrs.rel + '"';
-			}
-
-			html += '>';
+			html = wpLink.buildHtml(attrs);
 
 			// Insert HTML
 			if ( document.selection && wpLink.range ) {
@@ -369,7 +378,10 @@ var wpLink;
 			}
 
 			link = getLink();
-			text = inputs.text.val();
+
+			if ( inputs.wrap.hasClass( 'has-text-field' ) ) {
+				text = inputs.text.val() || attrs.href;
+			}
 
 			if ( link ) {
 				if ( text ) {
@@ -388,6 +400,8 @@ var wpLink;
 					editor.execCommand( 'mceInsertLink', false, attrs );
 				}
 			}
+
+			editor.nodeChanged();
 		},
 
 		updateFields: function( e, li ) {
