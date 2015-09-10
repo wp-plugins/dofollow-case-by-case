@@ -1,30 +1,148 @@
+/******configuration dofollow******/
+
+#left {
+	width: 700px;
+	float: left;
+	padding-right: 20px;
+	margin-top: 20px;
+}
+#left p {
+	text-align: justify;
+
+}
+/*.postbox p {
+	text-align:justify;
+	padding-left:15px;
+	padding-right: 15px;
+	line-height: 1.8;
+	}*/
+.postboxp p {
+	text-align:justify;
+	padding-left:15px;
+	padding-right: 15px;
+	line-height: 1.8;
+	}
+
+#right {
+	width: 200px;
+	float: left;
+}
+
+/***** end configuration dofollow*******/
+
+/****** header ******/
+#dofollow-header {
+	background: url('../images/dofollow-case-by-case-header.jpg') no-repeat;
+	width: 1000px;
+	height: 100px;
+	-webkit-border-radius: 10px 10px;  /* Safari  */	
+	/* Firefox */
+	border-top-left-radius:     10px 10px;
+	border-top-right-radius:    10px 10px;
+	border-bottom-right-radius: 10px 10px;
+	border-bottom-left-radius:  10px 10px;
+}
+#poststuff  {
+	padding-top: 0px !important;
+}
+#poststuff h2 {
+	font-size: 2.5em;
+	margin-bottom: 15px;
+	padding: 0 0 3px;
+	clear: left;
+	text-align: right;
+	color: #FFF;
+	padding-top: 40px;
+	padding-right: 20px;
+	font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.wrap div.updated, .wrap div.error, .media-upload-form div.error {
+margin: 35px 0 15px !important;
+}
+/****** end header ******/
+
+/****** button ******/
+.button-primary {
+background-color: #21759b;
+background-image: -webkit-gradient(linear,left top,left bottom,from(#2a95c5),to(#21759b));
+background-image: -webkit-linear-gradient(top,#2a95c5,#21759b);
+background-image: -moz-linear-gradient(top,#2a95c5,#21759b);
+background-image: -ms-linear-gradient(top,#2a95c5,#21759b);
+background-image: -o-linear-gradient(top,#2a95c5,#21759b);
+background-image: linear-gradient(to bottom,#2a95c5,#21759b);
+border-color: #21759b;
+border-bottom-color: #1e6a8d;
+-webkit-box-shadow: inset 0 1px 0 rgba(120,200,230,0.5);
+box-shadow: inset 0 1px 0 rgba(120,200,230,0.5);
+color: #fff;
+text-decoration: none;
+text-shadow: 0 1px 0 rgba(0,0,0,0.1);
+}
+
+
+/***** pagination ******/
 
 .pagination {
-clear:both;
-padding:20px 0;
-position:relative;
-font-size:11px;
-line-height:13px;
+    height: 36px;
+    margin: 18px 0;
+	margin-left:20px;
+	margin-right: 20px;
+	text-align: center;
+}
+.pagination ul {
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+.pagination li {
+    display: inline;
+}
+.pagination a {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    float: left;
+    line-height: 34px;
+    padding: 0 14px;
+    text-decoration: none;
+}
+.pagination a:hover, .pagination .active a {
+    background-color: #d3d3d3;
+}
+.pagination .active a {
+    color: #999999;
+    cursor: default;
+}
+.pagination .visited {
+    background-color: #d3d3d3;
+    cursor: default;
 }
 
-.pagination span, .pagination a {
-display:block;
-float:left;
-margin: 2px 2px 2px 0;
-padding:6px 9px 5px 9px;
-text-decoration:none;
-width:auto;
-color:#fff;
-background: #555;
+.pagination .disabled a, .pagination .disabled a:hover {
+    background-color: transparent;
+    color: #999999;
+    cursor: default;
+}
+.pagination li:first-child a {
+    border-left-width: 1px;
+    border-radius: 3px 0 0 3px;
+}
+.pagination li:last-child a {
+    border-radius: 0 3px 3px 0;
+}
+.pagination-centered {
+    text-align: center;
+}
+.pagination-right {
+    text-align: right;
 }
 
-.pagination a:hover{
-color:#fff;
-background: #3279BB;
-}
-
-.pagination .current{
-padding:6px 9px 5px 9px;
-background: #3279BB;
-color:#fff;
-}
+/******End pagination*****/
