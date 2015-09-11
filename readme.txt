@@ -12,7 +12,7 @@ DoFollow Case by Case allows you to selectively apply dofollow to comments, eith
 
 == Description ==
 
-This WordPress plugin gives you the possibility to remove the "nofollow" attribute from your wordpress blog's comments: from the author's links and/or from the comments text links. This can be done either case by case (editing each comment) or through a white-list of commenters emails, whose comments will allways be dofollow.
+**This WordPress plugin gives you the possibility to remove the "nofollow" attribute from your wordpress blog's comments**: from the author's links and/or from the comments text links. This can be done either case by case (editing each comment) or through a white-list of commenters emails, whose comments will allways be dofollow.
 
 It also adds a checkbox in the insert link popup box for including rel="nofollow" in links as you create them, so that you can significantly increase the control of the rel="nofollow" tag on every link on your blog. It is designed to give you fine-grained control of linking for SEO purposes.
 
@@ -95,12 +95,14 @@ Theme developers and plugin authors can choose from all these functions to inclu
 You can simply activate, deactivate or delete it in your plugin management section.
 
 = Are there any known incompatibilities? =
-The plugin should not be used together with other plugins with similar funcionalities like: [Nofollow Case by Case](http://wordpress.org/plugins/nofollow-case-by-case/ "Nofollow Case by Case"),[Nofollow Case by Case](http://wordpress.org/plugins/nofollow-case-by-case/ "Nofollow Case by Case"), [Ultimate Nofollow](http://wordpress.org/plugins/nofollow/ "Ultimate Nofollow"), [Nofollow Free](http://wordpress.org/plugins/nofollow-free/ "Nofollow Free") or [Smart DoFollow](http://wordpress.org/plugins/smart-dofollow/ "Smart DoFollow").
-If you find any other incompatibilities, please let us know.
+**The plugin should not be used together with other plugins with similar funcionalities** like: [Nofollow Case by Case](http://wordpress.org/plugins/nofollow-case-by-case/ "Nofollow Case by Case"),[Nofollow Case by Case](http://wordpress.org/plugins/nofollow-case-by-case/ "Nofollow Case by Case"), [Ultimate Nofollow](http://wordpress.org/plugins/nofollow/ "Ultimate Nofollow"), [Nofollow Free](http://wordpress.org/plugins/nofollow-free/ "Nofollow Free") or [Smart DoFollow](http://wordpress.org/plugins/smart-dofollow/ "Smart DoFollow"). This list is not complete because there are many plugins with similiar functionalities in the [plugin directory](https://wordpress.org/plugins/search.php?type=term&q=nofollow&=Search+Plugins "plugin directory").
+
+If you find incompatibilities with other plugins (that do not have similar funcionalitites as this one), please let us know.
 
 = Can I update WordPress without problems while using your plugin? = 
-> This plugin changes core WordPress functionality (i.e. modifies raw JS in js/wplink.js) in a way that is not modular and may break after major WordPress updates.
-> Please do not update WordPress to a major version until the plugin has been tested with it and the "tested up to" tag has been updated. You can always apply the security and other minor updates.
+> **This plugin changes core WordPress functionality** (i.e. modifies raw JS in js/wplink.js) in a way that is not modular and **may break after major WordPress updates**.
+
+> Please do not update WordPress to a major version until the plugin has been tested with it and the "tested up to" tag has been updated. **You can always apply the security and other minor updates**.
 
 = Do you make use of Dofollow Case by Case yourself? = 
 Of course we do. ;-)
