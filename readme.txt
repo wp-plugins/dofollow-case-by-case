@@ -2,7 +2,7 @@
 Contributors: apasionados, nunsys, netconsulting, desarrollo_john
 Donate link: http://apasionados.es/
 Tags: dofollow, nofollow, rel nofollow, comment, comments, link, links, seo, shortcode
-Requires at least: 3.0.1
+Requires at least: 4.0
 Tested up to: 4.3
 Stable tag: 3.1
 License: GPLv2 or later
@@ -17,6 +17,8 @@ This WordPress plugin gives you the possibility to remove the "nofollow" attribu
 It also adds a checkbox in the insert link popup box for including rel="nofollow" in links as you create them, so that you can significantly increase the control of the rel="nofollow" tag on every link on your blog. It is designed to give you fine-grained control of linking for SEO purposes.
 
 And it also adds a shortcode for making a link no follow in posts and pages. The usage is as follows: [nofollow] LINK [/nofollow] 
+
+> Don't use this plugin if you are using another plugin with similar funcionality. Please read the information about it in the [FAQ section](https://wordpress.org/plugins/dofollow-case-by-case/faq/ "FAQ section").
 
 = What can I do with this plugin? =
 
@@ -95,6 +97,10 @@ You can simply activate, deactivate or delete it in your plugin management secti
 = Are there any known incompatibilities? =
 The plugin should not be used together with other plugins with similar funcionalities like: [Nofollow Case by Case](http://wordpress.org/plugins/nofollow-case-by-case/ "Nofollow Case by Case"),[Nofollow Case by Case](http://wordpress.org/plugins/nofollow-case-by-case/ "Nofollow Case by Case"), [Ultimate Nofollow](http://wordpress.org/plugins/nofollow/ "Ultimate Nofollow"), [Nofollow Free](http://wordpress.org/plugins/nofollow-free/ "Nofollow Free") or [Smart DoFollow](http://wordpress.org/plugins/smart-dofollow/ "Smart DoFollow").
 If you find any other incompatibilities, please let us know.
+
+= Can I update WordPress without problems while using your plugin? = 
+> This plugin changes core WordPress functionality (i.e. modifies raw JS in js/wplink.js) in a way that is not modular and may break after major WordPress updates.
+> Please do not update WordPress to a major version until the plugin has been tested with it and the "tested up to" tag has been updated. You can always apply the security and other minor updates.
 
 = Do you make use of Dofollow Case by Case yourself? = 
 Of course we do. ;-)
